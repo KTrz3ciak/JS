@@ -22,6 +22,7 @@ if (sentence.length < 13) {
     // c. save rest of sentence
         sentence = sentence.slice(14)
         console.log(sentence);
+        console.log("something else")
     }
     
 }

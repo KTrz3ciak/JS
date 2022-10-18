@@ -11,21 +11,6 @@ let letterOfSentences = sentence.split("a");
 console.log(letterOfSentences.length - 1);
 
 // c.	display longest word
-// function longestWord(string) {
-//     let str = string.split(" ");
-//     let longest = 0;
-//     let word = null;
-//     for (i = 0; i < str.length - 1; i++)
-//     {
-//         if (longest < str.length)
-//         {
-//             longest = str.length;
-//             word = str;
-//             }
-//     }
-//     return word;
-// }
-// console.log(longestWord(sentence));
   const longestWord = (sentence) => {    
   const strArray = sentence.split(' ');                                         //funkcja napisana trybem strzałkowym, skrócnym
   const sortedStrArray = strArray.sort(

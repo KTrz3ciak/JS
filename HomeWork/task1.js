@@ -1,32 +1,51 @@
 // 1.	Given a string:
-let sentence = "Ala ma kota a twój tata sprzedaje jabłka na straganie"; 
+let sentence = "Increase your productivity with AI-powered writing assistant"; 
 // a.	count how many words it contains // w nawiasie zawyczaj sie w tym wypadku daje str od string
 function numberOfWords(word) { 
   return word.split(" ").length; 
 }
 console.log(numberOfWords(sentence));
 // b.	count how many letter “A”  is in it
-//insert your string here
 let letterOfSentences = sentence.split("a");
+//insert your string here
 console.log(letterOfSentences.length - 1);
 
 // c.	display longest word
-function longestWord(string) {
-    let str = string.split(" ");
-    let longest = 0;
-    let word = null;
-    for (i = 0; i < str.length - 1; i++)
-    {
-        if (longest < str.length)
-        {
-            longest = str.length;
-            word = str;
-            }
+// function longestWord(string) {
+//     let str = string.split(" ");
+//     let longest = 0;
+//     let word = null;
+//     for (i = 0; i < str.length - 1; i++)
+//     {
+//         if (longest < str.length)
+//         {
+//             longest = str.length;
+//             word = str;
+//             }
+//     }
+//     return word;
+// }
+// console.log(longestWord(sentence));
+  const longestWord = (sentence) => {    
+  const strArray = sentence.split(' ');                                         //funkcja napisana trybem strzałkowym, skrócnym
+  const sortedStrArray = strArray.sort(
+    (sentenceA, sentenceB) => {
+      return sentenceB.length - sentenceA.length;
     }
-    return word;
+  );
+  return sortedStrArray[0];
 }
 console.log(longestWord(sentence));
 
+// function longestWord(sentence) {
+//   const strArray = sentence.split(' ');
+//   const sortedStrArray = strArray.sort(function(sentenceA, sentenceB)        //Funckja napisana w zwykły sposób
+//   {
+//      return sentenceB.length - sentenceA.length;
+//   })
+//   return sortedStrArray[0];
+// }
+// console.log(longestWord(sentence));
 
 
 // d.	display how many words of length same as the longest is in the string

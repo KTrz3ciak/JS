@@ -85,21 +85,38 @@ let height = 5;
 // repeat n time, where n is pyramid height
 for (let i = 1; i <= 5; i++) {
     // 1. count spaces for the line
+    let secondSpacesCount = 5 - 1;
     let spacesCount = 5 + i;
     // 2. count hashes for the line
+    let secondHashesCoount = i;
     let hashesCount = i;
     // 3. display the line
-    let output = "";
-    for (let j = 5; j >= spacesCount; j--)
+   let output = "";
+   for (let l = 1; l <= secondSpacesCount; l++)
     {
         output += " ";
     }
     console.log(output);
-    for (let k = 1; k <= hashesCount; k++)
+    
+    for (let m = 1; m <= secondHashesCoount; m++)
     {
-        output += "#";
+      output += "#";
     }
     console.log(output);
+    
+    // for (let j = 5; j >= spacesCount; j--)
+    // {
+    //   output += " ";
+    // }
+    // console.log(output);
+  
+    
+    // for (let k = 1; k <= hashesCount; k++)
+    // {
+    //   output += "#";
+    // }
+    // console.log(output);
+  
 }
 
 // function zrobChoinke(n) {

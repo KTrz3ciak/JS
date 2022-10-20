@@ -1,3 +1,5 @@
+
+
 // 1.	Given a string:
 let sentence = "Increase your productivity with AI-powered writing assistant"; 
 // a.	count how many words it contains // w nawiasie zawyczaj sie w tym wypadku daje str od string
@@ -67,3 +69,48 @@ function findLongestWord(word) {
 }
 console.log(findLongestWord(secondSentence));
 
+// 2.	Gene finder - file: brca1.json - augment gene finder by:
+// a.	Displaying number of all genes
+
+function numberOfGenes(genes) {
+    
+  document.getElementById("./brca1.json").innerHTML = brcaFile;
+  
+}
+
+// b.	Displaying length of longest and shortest gene
+// 3.	Mario - Augment simple version to print out a whole pyramid like this:
+// a.	 
+let height = 5;
+// repeat n time, where n is pyramid height
+for (let i = 1; i <= 5; i++) {
+    // 1. count spaces for the line
+    let spacesCount = 5 + i;
+    // 2. count hashes for the line
+    let hashesCount = i;
+    // 3. display the line
+    let output = "";
+    for (let j = 5; j >= spacesCount; j--)
+    {
+        output += " ";
+    }
+    console.log(output);
+    for (let k = 1; k <= hashesCount; k++)
+    {
+        output += "#";
+    }
+    console.log(output);
+}
+
+
+ 
+// 4.	Credit Card - write a program that will tell if the credit card number is valid and what type of card it is (American Express / MasterCard / Visa)
+// a.	For card number validation - Luhn’s Algorithm is used (https://en.wikipedia.org/wiki/Luhn_algorithm)
+// b.	Assume:
+// i.	All American Express numbers start with 34 or 37; 
+// ii.	MasterCard numbers start with 51, 52, 53, 54, or 55; 
+// iii.	All Visa numbers start with 4
+// iv.	American Express uses 15-digit numbers
+// v.	MasterCard uses 16-digit numbers
+// vi.	Visa uses 13- and 16-digit numbers
+// c.	Display either card type or INVALID

@@ -102,6 +102,19 @@ for (let i = 1; i <= 5; i++) {
     console.log(output);
 }
 
+// function zrobChoinke(n) {
+//   for (i = 1; i <= n; i++) {
+//     for (j = n - 1; j >= i; j--) {
+//       console.log(" ");
+//       for (j = 1; j <= (2 * i - 1); j++) {
+//         console.log("#");
+//       }
+//     }
+    
+//   }
+//   console.log(zrobChoinke(10));
+// }
+
 
  
 // 4.	Credit Card - write a program that will tell if the credit card number is valid and what type of card it is (American Express / MasterCard / Visa)

@@ -1,7 +1,8 @@
 
 
 // 1.	Given a string:
-let sentence = "Increase your productivity with AI-powered writing assistant"; 
+let sentence = "Increase your productivity with AI-powered writing assistant";
+// let sentence = "ala ma kota"; 
 // a.	count how many words it contains // w nawiasie zawyczaj sie w tym wypadku daje str od string
 function numberOfWords(word) { 
   return word.split(" ").length; 
@@ -83,39 +84,31 @@ function numberOfGenes(genes) {
 // a.	 
 let height = 5;
 // repeat n time, where n is pyramid height
-for (let i = 1; i <= 5; i++) {
+for (let i = 1; i <= height; i++) {
     // 1. count spaces for the line
-    let secondSpacesCount = 5 - 1;
-    let spacesCount = 5 + i;
+    let spacesCount = height - i;
     // 2. count hashes for the line
-    let secondHashesCoount = i;
     let hashesCount = i;
     // 3. display the line
-   let output = "";
-   for (let l = 1; l <= secondSpacesCount; l++)
+    let output = "";
+
+    for (let j = 1; j <= spacesCount; j++)
     {
-        output += " ";
+      output += " ";
     }
     console.log(output);
+  
+    for (let l = 1; l <= hashesCount; l++)
+    {
+      output += "#";                             // Stworzona pętlą powodująca odwrotności wypisywania # niz w poprzedniej pętli
+    }
+    output += " ";                              // odstęp między dwoma schodkami
     
-    for (let m = 1; m <= secondHashesCoount; m++)
+    for (let k = 1; k <= hashesCount; k++)
     {
       output += "#";
     }
     console.log(output);
-    
-    // for (let j = 5; j >= spacesCount; j--)
-    // {
-    //   output += " ";
-    // }
-    // console.log(output);
-  
-    
-    // for (let k = 1; k <= hashesCount; k++)
-    // {
-    //   output += "#";
-    // }
-    // console.log(output);
   
 }
 

@@ -1,5 +1,4 @@
 
-
 // 1.	Given a string:
 let sentence = "Increase your productivity with AI-powered writing assistant";
 // let sentence = "ala ma kota"; 
@@ -73,11 +72,6 @@ console.log(findLongestWord(secondSentence));
 // 2.	Gene finder - file: brca1.json - augment gene finder by:
 // a.	Displaying number of all genes
 
-function numberOfGenes(genes) {
-    
-  document.getElementById("./brca1.json").innerHTML = brcaFile;
-  
-}
 
 // b.	Displaying length of longest and shortest gene
 // 3.	Mario - Augment simple version to print out a whole pyramid like this:
@@ -112,23 +106,23 @@ for (let i = 1; i <= height; i++) {
   
 }
 
-// function zrobChoinke(n) {
-//   for (i = 1; i <= n; i++) {
-//     for (j = n - 1; j >= i; j--) {
-//       console.log(" ");
-//       for (j = 1; j <= (2 * i - 1); j++) {
-//         console.log("#");
-//       }
-//     }
-    
-//   }
-//   console.log(zrobChoinke(10));
-// }
 
 
  
 // 4.	Credit Card - write a program that will tell if the credit card number is valid and what type of card it is (American Express / MasterCard / Visa)
 // a.	For card number validation - Luhn’s Algorithm is used (https://en.wikipedia.org/wiki/Luhn_algorithm)
+// let numberOfCreditCard = 3111111111111113;
+// function luhnValid3(cardNo) { // cardNo as a string w/ digits only
+//     var d = 0, e = false; // e = even = n-th digit counted from the end
+//     return ( cardNo.split("").reverse().reduce(
+//           function(s,dstr){ d = parseInt(dstr);
+//               return (s + [0,1,2,3,4,5,6,7,8,9,0,2,4,6,8,1,3,5,7,9][d+((e=!e)?0:10)]);
+//             }
+//          ,0
+//          ) % 10 == 0
+//       );
+// }
+// console.log(luhnValid3(numberOfCreditCard));
 // b.	Assume:
 // i.	All American Express numbers start with 34 or 37; 
 // ii.	MasterCard numbers start with 51, 52, 53, 54, or 55; 

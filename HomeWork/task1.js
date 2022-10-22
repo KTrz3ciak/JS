@@ -6,11 +6,11 @@ let sentence = "Increase your productivity with AI-powered writing assistant";
 function numberOfWords(word) { 
   return word.split(" ").length; 
 }
-console.log("Count words for sentence is " + numberOfWords(sentence));
+console.log("Number of word in the sentence is equal " + numberOfWords(sentence));
 // b.	count how many letter “A”  is in it
 let letterOfSentences = sentence.split("a");
 //insert your string here
-console.log("Count letter a on sentence is " + (letterOfSentences.length - 1));
+console.log("Number of letter a in the sentence is equal " + (letterOfSentences.length - 1));
 
 // c.	display longest word
 const longestWord = (sentence) => {

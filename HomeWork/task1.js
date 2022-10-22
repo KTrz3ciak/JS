@@ -58,19 +58,21 @@ function findLongestWord(word) {
 }
 console.log(findLongestWord(secondSentence));
 
-function findLongestWord(word) {
-  // 1. split string and sort array by elements.
-  let longestWord = word.split(' ').sort(function (a, b)
-  {
-    return b.length - a.length;
-  });
-  // 2. return length of the first sorted element array
-  return longestWord[0].length;
-}
-console.log(findLongestWord(secondSentence));
+// function findLongestWord(word) {
+//   // 1. split string and sort array by elements.
+//   let longestWord = word.split(' ').sort(function (a, b)
+//   {
+//     return b.length - a.length;
+//   });
+//   // 2. return length of the first sorted element array
+//   return longestWord[0].length;
+// }
+// console.log(findLongestWord(secondSentence));
 
 // 2.	Gene finder - file: brca1.json - augment gene finder by:
 // a.	Displaying number of all genes
+const brca = require("./brca1.json");
+console.log(brca);
 
 
 // b.	Displaying length of longest and shortest gene

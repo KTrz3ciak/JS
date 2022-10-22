@@ -60,7 +60,7 @@ console.log(findLongestWord(secondSentence));
 
 function findLongestWord(word) {
   // 1. split string and sort array by elements.
-  var longestWord = word.split(' ').sort(function (a, b)
+  let longestWord = word.split(' ').sort(function (a, b)
   {
     return b.length - a.length;
   });

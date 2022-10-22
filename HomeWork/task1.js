@@ -41,38 +41,38 @@ console.log(longestWord(sentence));
 // f.	“This is an example.”
 // g.	"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
 let secondSentence = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
-function findLongestWord(word) {
-  return word.length;
-  //first method For Loop
-  // 1. split string 
-  let wordSplit = word.Split(" ");
-  // 2.  Adding a variable that will hold the length of the longest 
-  let longestWord = 0;
-  // 3. Create For Loop
-  for (let i = 0; i < wordSplit.length; i++)
-  {
-    if (wordSplit[i].length > longestWord) // If wordSplit[i].length is greater than the word ...
-      longestWord = wordSplit[i].length; // ...then longestWord  == wordSplit[i].split
-  }
-  return longestWord;
-}
-console.log(findLongestWord(secondSentence));
-
 // function findLongestWord(word) {
-//   // 1. split string and sort array by elements.
-//   let longestWord = word.split(' ').sort(function (a, b)
+//   return word.length;
+//   //first method For Loop
+//   // 1. split string 
+//   let wordSplit = word.Split(" ");
+//   // 2.  Adding a variable that will hold the length of the longest 
+//   let longestWord = 0;
+//   // 3. Create For Loop
+//   for (let i = 0; i < wordSplit.length; i++)
 //   {
-//     return b.length - a.length;
-//   });
-//   // 2. return length of the first sorted element array
-//   return longestWord[0].length;
+//     if (wordSplit[i].length > longestWord) // If wordSplit[i].length is greater than the word ...
+//       longestWord = wordSplit[i].length; // ...then longestWord  == wordSplit[i].split
+//   }
+//   return longestWord;
 // }
 // console.log(findLongestWord(secondSentence));
+
+function findLongestWord(word) {
+  // 1. split string and sort array by elements.
+  let longestWord = word.split(' ').sort(function (a, b)
+  {
+    return b.length - a.length;
+  });
+  // 2. return length of the first sorted element array
+  return longestWord[0].length;
+}
+console.log(findLongestWord(secondSentence));
 
 // 2.	Gene finder - file: brca1.json - augment gene finder by:
 // a.	Displaying number of all genes
 const brca = require("./brca1.json");
-console.log(brca);
+//console.log(brca);
 
 
 // b.	Displaying length of longest and shortest gene

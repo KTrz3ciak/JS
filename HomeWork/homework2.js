@@ -38,7 +38,7 @@ function sumArray(inputArray) {
     }
     return sum;
 }
-console.log(sumArray(myArray));
+console.log("Sum of all elements on my array is: " + sumArray(myArray));
 
 // 1.c
 let sumFirstLast = 0;
@@ -49,7 +49,7 @@ function sumFirstLastArray(inputArray) {
     }
     return sum;
 }
-console.log(sumFirstLastArray(myArray));
+console.log("Sum of first and last element on my array is:  " + sumFirstLastArray(myArray));
 
 // 1.d
 function reverseArray() {

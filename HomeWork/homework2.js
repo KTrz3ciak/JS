@@ -78,8 +78,10 @@ console.log("Reverse array: " + reverseArray(array));
 }
 console.log(arrayOfNumbersAndAttemps(array));
 // 1.f
-function randomArray(array) {
-    let randomA = Math.floor(Math.random() * array.length);
-    let random = array[randomA];
+function randomArray(randomA) {
+    // let randomA = Math.floor(raMath.random() * array.length);
+    // return array[Math.floor(Math.random() * array.length)];
+    let randomArray = Math.floor(Math.random() * randomA.length)
+    return randomArray[randomA];
 }
 console.log(randomArray(array));

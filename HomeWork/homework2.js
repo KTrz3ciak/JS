@@ -24,7 +24,8 @@
 
 //1.b
 let array = [1, 6, 23, 8, 4, 8, 3, 7];
-console.log(array);
+console.log("Length of array is: " + array.length);
+console.log("Start array: " + array);
 // console.log(array.length);
 function sumArray(inputArray) {
     let sum = 0;
@@ -46,16 +47,39 @@ function sumFirstLastArray(inputArray) {
 }
 console.log(sumFirstLastArray(array));
 
-//1.d
+// 1.d
 function reverseArray(inputArray) {
     let output = [];
     // for (var i = 0; i < inputArray.length; i++) {
-    //     output.push(inputArray.pop());;       //only 4 last number will  be reverserd bcs i === 4 in this  
+    //     output.push(inputArray.pop());;       // only 4 last number will  be reversed bcs i === 4 in this loop
     // }
     // return output
      while (array.length) {     // length of array
-        output.push(array.pop()); // method push / pop
-    }
+        output.push(array.pop()); // method push / pop | push method -> first element == last element &&
+    }                             // pop method -> takes the last element from the array and returns it 
   return output;
 }
-console.log(reverseArray(array));
+console.log("Reverse array: " + reverseArray(array));
+// 1.e
+// e.	Create a function that takes two parameters - array of numbers, and number of attempts. Choose random numbers from the array based on the number of attempts and return the lowest among them.
+ function arrayOfNumbersAndAttemps(array, attemps)
+{
+    let lowestScore = [];
+     let randomArrayItems = Math.floor(Math.random() * array.length);
+     let random = array[randomArrayItems];
+    // for (let i = 0; i < array.length; i++) {
+    //     if (array[i] > randomArrayItems) 
+    //     {
+    //         output = lowestScore.push(i);
+    //     }
+        
+    //     return output;
+    // }
+}
+console.log(arrayOfNumbersAndAttemps(array));
+// 1.f
+function randomArray(array) {
+    let randomA = Math.floor(Math.random() * array.length);
+    let random = array[randomA];
+}
+console.log(randomArray(array));

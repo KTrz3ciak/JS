@@ -24,16 +24,16 @@
 
 //1.b
 let myArray = [1, 6, 23, 8, 4, 8, 3, 7];
-let rArr = Math.floor(Math.random() * 8);
+// let rArr = Math.floor(Math.random() * 8);
 let ranArray = Math.floor(Math.random() * myArray.length);
-console.log("Random array: " + rArr);
+// console.log("Random array: " + rArr);
 console.log("Random index from array is: " + ranArray);
 console.log("Length of array is: " + myArray.length);
 console.log("Start array: " + myArray);
 // console.log(array.length);
 function sumArray(inputArray) {
     let sum = 0;
-    for (var i = 0; i < inputArray.length; i++) {
+    for (let i = 0; i < inputArray.length; i++) {
         sum += inputArray[i];
     }
     return sum;
@@ -44,17 +44,17 @@ console.log("Sum of all elements on my array is: " + sumArray(myArray));
 let sumFirstLast = 0;
 function sumFirstLastArray(inputArray) {
     let sum = 0;
-    for (var i = 0; i < inputArray.length; i++) {
+    for (let i = 0; i < inputArray.length; i++) {
         sum = inputArray[0] + inputArray[i];
     }
     return sum;
 }
 console.log("Sum of first and last element on my array is:  " + sumFirstLastArray(myArray));
-
+//Math.floor(Math.random() * (max - min + 1) + min)
 // 1.d
 function reverseArray() {
     let output = [];
-    // for (var i = 0; i < inputArray.length; i++) {
+    // for (let i = 0; i < inputArray.length; i++) {
     //     output.push(inputArray.pop());;       // only 4 last number will  be reversed bcs i === 4 in this loop
     // }
     // return output
@@ -66,29 +66,62 @@ function reverseArray() {
 console.log("Reverse array: " + reverseArray(myArray));
 // 1.e
 // e.	Create a function that takes two parameters - array of numbers, and number of attempts. Choose random numbers from the array based on the number of attempts and return the lowest among them.
-//  function arrayOfNumbersAndAttemps(array, attemps)
-// {
-//      let lowestScore = 0;
-//      let output;
-//     //  let randomArrayItems = Math.floor(Math.random() * array.length);
-//     //  let random = array[randomArrayItems];
-//     attemps = myArray.length;
-//      for (let i = 0; i < myArray.length; i++) {
-//          output = "Czy tutaj coś sie dzieje ? " + i + myArray[i];
-//          console.log(output);
-//         if (array[i] > lowestScore) 
-//         {
-//             lowestScore = myArray[i]
-//         } 
-//      }
-//     return lowestScore;
-// }
-// console.log(arrayOfNumbersAndAttemps(myArray));
-// 1.f
 let myArray2 = [1, 6, 23, 8, 4, 8, 3, 7];
+function arrayOfNumbersAndAttemps() {
+    let attemps = Math.floor(Math.random() * myArray2.length);
+    console.log("This is number of attemp: " + attemps);
+    return myArray2[attemps];
+}
+console.log("This is the number under any attempt: " + arrayOfNumbersAndAttemps(myArray));
+// 1.f
 function getRandomArray() {
     let randomArray = Math.floor(Math.random() * myArray2.length);
     return myArray2[randomArray];
 }
 console.log("Random number of my array is: " + getRandomArray(myArray2));
+// 1.g
+//g. Calculate the sum of the odd items [1,6,23,8,4,98,3,7,3,98,4,98]
 
+let myArray3 = [1, 6, 23, 8, 4, 98, 3, 7, 3, 98, 4, 98];
+function oddNumbers(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 1) {
+            sum += arr[i];
+            // console.log(sum);
+        }
+    }
+    
+    return sum;
+    
+}
+console.log("Sum numbers on odd position is: " + oddNumbers(myArray3));
+
+// 1.h
+// h. With  a given start value of 0. Iterate the array and add even items and subtract odd ones. [1,6,23,8,4,98,3,7,3,98,4,98]
+let array4 = [1, 6, 23, 8, 4, 98, 3, 7, 3, 98, 4, 98]
+function addAndAsbstract(arr) {
+    let sum = 0;
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] % 2 == 1) {
+            sum += arr[i];
+            // console.log(sum);
+        }
+    }
+}
+console.log("waiting for something");
+// 2. Create a function that returns number of days till Friday
+function getDayNameInPolish()
+{
+    let today = new Date();
+    // console.log(today);
+    let numberDayTillFriday = 0;
+    let dayOfWeek = today.getDay();
+    let daysInPolish = ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"];
+    let Friday = daysInPolish[5];
+    console.log(Friday);
+    console.log(daysInPolish);
+    numberDayTillFriday = dayOfWeek - Friday;
+    return daysInPolish[dayOfWeek];
+}
+console.log(getDayNameInPolish());

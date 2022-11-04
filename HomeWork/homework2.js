@@ -105,27 +105,46 @@ function addAndAsbstract(arr) {
     for (let i = 0; i < arr.length; i++) {
         if (arr[i] % 2 === 0) {
             sum += arr[i];
-            console.log("parzysta:" + sum);
+            console.log("even:" + sum);   // parzyste
         } else if (arr[i] % 2 === 1) {
             sum -= arr[i];
-            console.log("nieparzysta:" + sum);
+            console.log("odd:" + sum); // nieparzyste
         }
         }
     return sum;
 }
-console.log(addAndAsbstract(array4));
+console.log("End score is: " + addAndAsbstract(array4));
 // 2. Create a function that returns number of days till Friday
-function getDayNameInPolish()
-{
-    let today = new Date();
-    // console.log(today);
-    let numberDayTillFriday = 0;
-    let dayOfWeek = today.getDay();
-    let daysInPolish = ["niedziela", "poniedziałek", "wtorek", "środa", "czwartek", "piątek", "sobota"];
-    let Friday = daysInPolish[5];
-    console.log(Friday);
-    console.log(daysInPolish);
-    numberDayTillFriday = dayOfWeek - Friday;
-    return daysInPolish[dayOfWeek];
+
+
+let today = new Date();
+let daysOfWeek = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
+console.log(typeof Number(daysOfWeek));
+console.log(daysOfWeek);
+function daysTillFriday(day) {
+    let numbersOfDays = 0;
+    for (let i = 0; day.length; i++)
+    {
+        if (day == "Monday")
+        {
+            numbersOfDays++;
+            console.log("Number of days till friday is: " + numbersOfDays);
+        } else {
+            console.log("Today friday");
+        }
+    }
+    // switch (daysOfWeek[today.getDay("Friday")])
+    // {
+    //     case 0: day = 'Sunday'; break;
+    //     case 1: day = 'Monday'; break;
+    //     case 2: day = 'Tuesday'; break;
+    //     case 3: day = 'Wednesday'; break;
+    //     case 4: day = 'Thursday'; break;
+    //     case 5: day = 'Friday'; console.log("here friday"); break;
+    //     case 6: day = 'Saturday'; break;
+    // }
+    console.log(numbersOfDays);
+    return numbersOfDays;
+    // return numbersOfDays;
 }
-console.log(getDayNameInPolish());
+console.log(daysTillFriday(daysOfWeek));

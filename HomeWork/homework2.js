@@ -103,13 +103,17 @@ let array4 = [1, 6, 23, 8, 4, 98, 3, 7, 3, 98, 4, 98]
 function addAndAsbstract(arr) {
     let sum = 0;
     for (let i = 0; i < arr.length; i++) {
-        if (arr[i] % 2 == 1) {
+        if (arr[i] % 2 === 0) {
             sum += arr[i];
-            // console.log(sum);
+            console.log("parzysta:" + sum);
+        } else if (arr[i] % 2 === 1) {
+            sum -= arr[i];
+            console.log("nieparzysta:" + sum);
         }
-    }
+        }
+    return sum;
 }
-console.log("waiting for something");
+console.log(addAndAsbstract(array4));
 // 2. Create a function that returns number of days till Friday
 function getDayNameInPolish()
 {

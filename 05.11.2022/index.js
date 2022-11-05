@@ -43,5 +43,25 @@ console.log(result);
 const numbers3 = [1, 2, 3];
 const result3 = numbers3.reduce((accumulator, currentElement) => {
     return accumulator + currentElement;
-},0)
+}, 0);
 console.log(result3);
+
+const numbers4 = [1, 2, 3, 12, 56, 7, 2, 389, 6, 0];
+const result4 = numbers4.reduce((accumulator, currentElement) => {
+    if (currentElement % 2 === 0) {
+        return accumulator + currentElement;
+    } else {
+        return accumulator - currentElement;
+    }
+}, []);
+console.log(result4);
+
+
+const numbers5 = [1, 2, 3];
+const result5 = numbers.map(number => number * 2)
+    .sort((a, b) => b - a)
+    .filter((number) => number < 4)
+
+console.log(result5);
+
+

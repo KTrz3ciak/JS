@@ -110,7 +110,7 @@ function mapAllCharactersLivingOnEarth() {
 const evalDate = new Date('2018-04-15'); 
 const evalDateMS = evalDate.getTime();
 
-console.log(evalDateMS);
+// console.log(evalDateMS);
 function mapCharactersByDate() {
     const result = characters.filter(currChar => {
         const creationDate = new Date(currChar.created);
@@ -123,5 +123,5 @@ function mapCharactersByDate() {
     })
     return result;
 }
-console.log(mapCharactersByDate());
+// console.log(mapCharactersByDate());
 const number = 1;

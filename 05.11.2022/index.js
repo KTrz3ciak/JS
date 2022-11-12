@@ -3,8 +3,7 @@
 // //     console.log("Welcome " + name[i]);
 // //     logUser(userName[i]);
 // // }
-
-// //declarative
+// declarative
 // userName.forEach(logUser);
 
 // function logUser(userName) {

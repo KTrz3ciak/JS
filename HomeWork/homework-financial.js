@@ -12,32 +12,14 @@ console.log('Financial data: ' + getFiancialObject());
 
 function getFiancialObject() {
   const financialObject = financialData.reduce((sum, currentElement) => {
-    const costNumber = Number(currentElement.cost);
+    const costNumber = Math.round(currentElement.cost * 10) / 10;
     if (currentElement.cost > 0 && currentElement.detailsOfPayent.date.includes('2014')) {
-      console.log("There is cost: " + costNumber);
-      return "\n" + costNumber;
+      // console.log("There is cost: " + costNumber);
+      return sum + costNumber;
     }
-  });
+    return sum;
+  }, 0);
   // TODO (create functions for calculations below)
+
   return financialObject;
 }
-// filter((date) => {
-//     (date.detailsOfPayent.date.includes('-2014'))
-//     {
-//       return true;
-//     }
-//     return false;
-//   }).
-
-// TODO (util functions)
-// function moneySpent() {
-//   const result = financialData.filter((cost) => {
-//     if (financialData.origin.date.includes("2014"))
-//     {
-//       return true;
-//     }
-//     return false;
-//   })
-//   return result;
-// }
-// console.log(monetSpent());

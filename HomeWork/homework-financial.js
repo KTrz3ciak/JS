@@ -17,7 +17,8 @@ function getFiancialObject() {
       companyOne: getEaringsPerCompanyECSTASIA(),
       companyTwo: getEaringsPerCompanyMANGELICA(),
       companyThree: getEaringsPerCompanyCODAX()
-    }
+    },
+    spendingsPerTransactionType: getSpendingsPerTransactionType(),
   };
   // TODO (create functions for calculations below)
   return financialObject;
@@ -85,3 +86,33 @@ function getEaringsPerCompanyCODAX() {
   return earnings;
 }
 // console.log(getEaringsPerCompanyCODAX());
+
+function getSpendingsPerTransactionType() {
+  const transactionType = financialData.reduce((add, currentType) => {
+    if (currentType.detailsOfPayent.Type === 1) {
+      // console.log("Hello There 1");
+      return add + currentType;
+    } else if (currentType.detailsOfPayent.Type === 2) {
+      // console.log("Hello There 2");
+      return add + currentType;
+    } else if (currentType.detailsOfPayent.Type === 3) {
+      // console.log("Hello There 3");
+      return add + currentType;
+    } else if (currentType.detailsOfPayent.Type === 4) {
+      // console.log("Hello There 4");
+      return add + currentType;
+    } else if (currentType.detailsOfPayent.Type === 5) {
+      // console.log("Hello There 5");
+      return add + currentType;
+    } else if (currentType.detailsOfPayent.Type === 6) {
+      // console.log("Hello There 6");
+      return add + currentType;
+    } else if (currentType.detailsOfPayent.Type === 7) {
+      // console.log("Hello There 7");
+      return add + currentType;
+    }
+    return add;
+  }, 0)
+  return transactionType;
+}
+// console.log(getSpendingsPerTransactionType());

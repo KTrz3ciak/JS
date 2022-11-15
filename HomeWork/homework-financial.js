@@ -14,11 +14,11 @@ function getFiancialObject() {
   const financialObject = {
     moneySpentAt2014: getSpendingsIn2014(),
     earningPerCompany: {
-      companyOne: getEaringsPerCompanyECSTASIA(),
-      companyTwo: getEaringsPerCompanyMANGELICA(),
-      companyThree: getEaringsPerCompanyCODAX()
+      company: getEaringsPerCompany(),
+      // companyTwo: getEaringsPerCompanyMANGELICA(),
+      // companyThree: getEaringsPerCompanyCODAX()
     },
-    spendingsPerTransactionType: getSpendingsPerTransactionType(),
+    // spendingsPerTransactionType: getSpendingsPerTransactionType(),
   };
   // TODO (create functions for calculations below)
   return financialObject;
@@ -45,74 +45,84 @@ function getSpendingsIn2014() {
 }
 console.log(getSpendingsIn2014());
 
-function getEaringsPerCompanyECSTASIA() {
-  const earnings = financialData.reduce((sum, currentElement) =>
-  {
-    const costNumber = Math.round(currentElement.cost * 2) / 2;
-    if (currentElement.cost > 0 && currentElement.detailsOfPayent.company.includes('ECSTASIA'))
-    {
-      return sum + costNumber;
-    }
-    return sum;
-  },0)
-  return earnings;
-}
-// console.log(getEaringsPerCompanyECSTASIA());
+// let sum = 0;
+// const numbers = [65, 44, 12, 4];
+// numbers.forEach(myFunction);
 
-function getEaringsPerCompanyMANGELICA() {
-  const earnings = financialData.reduce((sum, currentElement) =>
-  {
-    const costNumber = Math.round(currentElement.cost * 2) / 2;
-    if (currentElement.cost > 0 && currentElement.detailsOfPayent.company.includes('MANGELICA'))
-    {
-      return sum + costNumber;
-    }
-    return sum;
-  },0)
-  return earnings;
-}
-// console.log(getEaringsPerCompanyMANGELICA());
+// function myFunction(item) {
+//   sum += item;
 
-function getEaringsPerCompanyCODAX() {
-  const earnings = financialData.reduce((sum, currentElement) =>
-  {
-    const costNumber = Math.round(currentElement.cost * 2) / 2;
-    if (currentElement.cost > 0 && currentElement.detailsOfPayent.company.includes('CODAX'))
+function getEaringsPerCompany(nameCompany, currentCost) {
+    const earnings = financialData.reduce((nameCompany, currentElement) =>
     {
-      return sum + costNumber;
+      const currentCompany = currentElement.detailsOfPayent.company;
+      const currentCost = currentElement.cost;
+    const costNumber = Math.round(currentElement.cost * 2) / 2;
+    if (currentCost > 0 && currentCompany[nameCompany])
+    {
+       return currentCompany[nameCompany] += currentCost;
     }
-    return sum;
+    return nameCompany;
   },0)
   return earnings;
 }
+console.log(getEaringsPerCompany());
+
+// function getEaringsPerCompanyMANGELICA() {
+//   const earnings = financialData.reduce((sum, currentElement) =>
+//   {
+//     const costNumber = Math.round(currentElement.cost * 2) / 2;
+//     if (currentElement.cost > 0 && currentElement.detailsOfPayent.company.includes('MANGELICA'))
+//     {
+//       return sum + costNumber;
+//     }
+//     return sum;
+//   },0)
+//   return earnings;
+// }
+// // console.log(getEaringsPerCompanyMANGELICA());
+
+// function getEaringsPerCompanyCODAX() {
+//   const earnings = financialData.reduce((sum, currentElement) =>
+//   {
+//     const costNumber = Math.round(currentElement.cost * 2) / 2;
+//     if (currentElement.cost > 0 && currentElement.detailsOfPayent.company.includes('CODAX'))
+//     {
+//       return sum + costNumber;
+//     }
+//     return sum;
+//   },0)
+//   return earnings;
+// }
 // console.log(getEaringsPerCompanyCODAX());
 
-function getSpendingsPerTransactionType() {
-  const transactionType = financialData.reduce((add, currentType) => {
-    if (currentType.detailsOfPayent.Type === 1) {
-      // console.log("Hello There 1");
-      return add + currentType;
-    } else if (currentType.detailsOfPayent.Type === 2) {
-      // console.log("Hello There 2");
-      return add + currentType;
-    } else if (currentType.detailsOfPayent.Type === 3) {
-      // console.log("Hello There 3");
-      return add + currentType;
-    } else if (currentType.detailsOfPayent.Type === 4) {
-      // console.log("Hello There 4");
-      return add + currentType;
-    } else if (currentType.detailsOfPayent.Type === 5) {
-      // console.log("Hello There 5");
-      return add + currentType;
-    } else if (currentType.detailsOfPayent.Type === 6) {
-      // console.log("Hello There 6");
-      return add + currentType;
-    } else if (currentType.detailsOfPayent.Type === 7) {
-      // console.log("Hello There 7");
-      return add + currentType;
-    }
-    return add;
-  }, 0)
-  return transactionType;
-}
+// function getSpendingsPerTransactionType() {
+//   const transactionType = financialData.reduce((add, currentType) => {
+//     const spendings = getFiancialObject().moneySpentAt2014;
+//     if (currentType.detailsOfPayent.Type === 1) {
+//       // console.log("Hello There 1");
+//       return add + currentType;
+//     } else if (currentType.detailsOfPayent.Type === 2) {
+//       // console.log("Hello There 2");
+//       return add + currentType;
+//     } else if (currentType.detailsOfPayent.Type === 3) {
+//       // console.log("Hello There 3");
+//       return add + currentType;
+//     } else if (currentType.detailsOfPayent.Type === 4) {
+//       // console.log("Hello There 4");
+//       return add + currentType;
+//     } else if (currentType.detailsOfPayent.Type === 5) {
+//       // console.log("Hello There 5");
+//       return add + currentType;
+//     } else if (currentType.detailsOfPayent.Type === 6) {
+//       // console.log("Hello There 6");
+//       return add + currentType;
+//     } else if (currentType.detailsOfPayent.Type === 7) {
+//       // console.log("Hello There 7");
+//       return add + currentType;
+//     }
+//     return add;
+//   }, 0)
+//   return transactionType;
+// }
 // console.log(getSpendingsPerTransactionType());

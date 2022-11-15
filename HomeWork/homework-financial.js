@@ -13,16 +13,20 @@ console.log('Financial data: ' + getFiancialObject());
 function getFiancialObject() {
   const financialObject = {
     moneySpentAt2014: getSpendingsIn2014(),
-    earningPerCompany: {
-      company: getEaringsPerCompany(),
-      // companyTwo: getEaringsPerCompanyMANGELICA(),
-      // companyThree: getEaringsPerCompanyCODAX()
+    earningPerCompany(nameCompany, moneySpent) {
+      return financialData[nameCompany] += moneySpent;
     },
-    // spendingsPerTransactionType: getSpendingsPerTransactionType(),
+    getSpendingsPerTransactionType(type, moneySpent)
+    {
+      return financialData[type] += moneySpent;
+    }
+    
   };
   // TODO (create functions for calculations below)
   return financialObject;
 }
+console.log(getFiancialObject());
+
 function getSpendingsIn2014() {
   const moneySpent = financialData.reduce((sum, currentElement) => {
     const costNumber = Math.round(currentElement.cost * 10) / 10;
@@ -45,6 +49,7 @@ function getSpendingsIn2014() {
 }
 console.log(getSpendingsIn2014());
 
+
 // let sum = 0;
 // const numbers = [65, 44, 12, 4];
 // numbers.forEach(myFunction);
@@ -52,21 +57,21 @@ console.log(getSpendingsIn2014());
 // function myFunction(item) {
 //   sum += item;
 
-function getEaringsPerCompany(nameCompany, currentCost) {
-    const earnings = financialData.reduce((nameCompany, currentElement) =>
-    {
-      const currentCompany = currentElement.detailsOfPayent.company;
-      const currentCost = currentElement.cost;
-    const costNumber = Math.round(currentElement.cost * 2) / 2;
-    if (currentCost > 0 && currentCompany[nameCompany])
-    {
-       return currentCompany[nameCompany] += currentCost;
-    }
-    return nameCompany;
-  },0)
-  return earnings;
-}
-console.log(getEaringsPerCompany());
+// function getEaringsPerCompany(nameCompany, currentCost) {
+//     const earnings = financialData.reduce((nameCompany, currentElement) =>
+//     {
+//       const currentCompany = currentElement.detailsOfPayent.company;
+//       const currentCost = currentElement.cost;
+//     if (currentCost > 0 && currentCompany[nameCompany])
+//     {
+//        return currentCompany[nameCompany] += currentCost;
+//     }
+//     return nameCompany;
+//   },0)
+//   return earnings;
+// }
+// console.log(getEaringsPerCompany());
+
 
 // function getEaringsPerCompanyMANGELICA() {
 //   const earnings = financialData.reduce((sum, currentElement) =>

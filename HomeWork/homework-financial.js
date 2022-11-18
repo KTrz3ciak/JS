@@ -25,10 +25,11 @@ function getFiancialObject() {
 }
 
 
+
 console.log(getFiancialObject());
 
 function getSpendingsIn2014() {
-  const moneySpent = financialData.reduce((sum, currentElement) => {
+  return financialData.reduce((sum, currentElement) => {
     const costNumber = Math.round(currentElement.cost * 10) / 10;
     if (currentElement.cost > 0 && currentElement.detailsOfPayent.date.includes('2014')) {
       // console.log("There is cost: " + costNumber);
@@ -37,25 +38,26 @@ function getSpendingsIn2014() {
     return sum;
   }, 0);
   // TODO (create functions for calculations below)
-
-  return moneySpent;
 }
 console.log(getSpendingsIn2014());
 
 function getEaringsPerCompany() {
   return financialData.reduce((nameCompany, currentElement) => {
     const currentCompany = currentElement.detailsOfPayent.company;
-    const currentCost = currentElement.cost;
+    const currentCost = +currentElement.cost;
+    // console.log(currentCost)
     // console.log(currentCompany);
-    financialData.forEach((elements) => {
-          return nameCompany[currentCompany] += +currentCost;
-        });
-        if (nameCompany[currentCompany] === undefined)
-        {
-        nameCompany[currentCompany] = 0;
-        }
-        return nameCompany;
-      }, {})     
+    // financialData.forEach(company => {
+    //   // console.log(e);
+    //   return company[currentCompany] += currentCost;
+    // });
+    if (nameCompany[currentCompany] === undefined)
+    {
+    nameCompany[currentCompany] = currentCost;
+    }
+      return nameCompany;
+      }, {})   
+      
     }
     console.log(getEaringsPerCompany());
 

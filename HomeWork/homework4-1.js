@@ -4,10 +4,28 @@
 // on resolve it should return “Now I work”
 // and on reject “Now I don’t’.
 
-function getRandomPromise() {
-  return; // Your solution here
-}
+const { resolve } = require("path");
 
-getRandomPromise
+function getRandomPromise() {
+  const shouldBeResolved = true;
+  const myPromise = new Promise((resolve, reject) => {
+    anotherFunction(resolve, reject);
+  });
+  function anotherFunction(resolve, reject) {
+    let randomNumber = Math.floor(Math.random() * 10) / 10;
+    console.log(randomNumber);
+  setTimeout(function() {
+    if (randomNumber <= 0.5) {
+      resolve();
+    } else {
+      reject();
+    }
+  }, 300);
+  }
+  return myPromise;
+
+  }; 
+
+getRandomPromise() 
   .then((result) => console.log('I expect this to be "Now I work": ', result))
   .catch((error) => console.log('I expect this to be "Now I don\'t": ', error));

@@ -4,13 +4,13 @@
 // RUN npm install IN THIS FOLDER BEFORE RUNNING YOUR CODE!
 const fetch = require('node-fetch');
 const URL = 'https://rickandmortyapi.com/api';
-const episodeNumber = 7;
+const episode = 7;
 function getCharactersFromEpisode(episodeNmber) {
   // your code here
-  fetch(`${URL}${episodeNmber}`)
-    .then((episodeNmber) => {
-      if (episodeNmber.ok === false) {
-        throw new Error('Network error: ' + episodeNmber.includes("07"));
+  fetch(`${URL}${episode}`)
+    .then((episode) => {
+      if (episode.ok === false) {
+        throw new Error('Network error: ' + episode.includes("07"));
         } else {
             return episode.json()
         }

@@ -16,9 +16,9 @@ function getRandomPromise() {
     console.log(randomNumber);
   setTimeout(function() {
     if (randomNumber <= 0.5) {
-      resolve();
+      resolve();  //50% - czyli od 0 - do 0,49 
     } else {
-      reject();
+      reject();  // 50% - czyli od 0.51 - do 100
     }
   }, 300);
   }

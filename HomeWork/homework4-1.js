@@ -4,23 +4,22 @@
 // on resolve it should return “Now I work”
 // and on reject “Now I don’t’.
 
-const { resolve } = require("path");
-
 function getRandomPromise() {
   const shouldBeResolved = true;
   const myPromise = new Promise((resolve, reject) => {
     anotherFunction(resolve, reject);
   });
   function anotherFunction(resolve, reject) {
-    let randomNumber = Math.floor(Math.random() * 10) / 10;
-    console.log(randomNumber);
+    let randomNumber = Math.floor(Math.random() * 100);
+    console.log("50% for resolve and 50% with reject");
+    console.log(`Random percentage is ${randomNumber}%`);
   setTimeout(function() {
-    if (randomNumber <= 0.5) {
-      resolve();  //50% - czyli od 0 - do 0,49 
+    if (randomNumber <= 50) {
+      console.log("Now I work with resolve"); //50% - czyli od 0 - do 0,49 
     } else {
-      reject();  // 50% - czyli od 0.51 - do 100
+      console.log("Now I don\'t work with reject");  // 50% - czyli od 0.51 - do 100
     }
-  }, 300);
+  });
   }
   return myPromise;
 

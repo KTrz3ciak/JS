@@ -15,9 +15,9 @@ function getRandomPromise() {
     console.log(`Random percentage is ${randomNumber}%`);
   setTimeout(function() {
     if (randomNumber <= 50) {
-      console.log("Now I work with resolve"); //50% - czyli od 0 - do 0,49 
+      resolve("Now i work"); // 50% - czyli od 0 - do 0,49 
     } else {
-      console.log("Now I don\'t work with reject");  // 50% - czyli od 0.51 - do 100
+      reject("Now i don't");  // 50% - czyli od 0.51 - do 100
     }
   });
   }
